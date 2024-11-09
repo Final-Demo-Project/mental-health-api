@@ -9,7 +9,7 @@ export const permissions = [
         ]
     },
     {
-        role: "vendor",
+        role: "counselor",
         actions: [
             "get_profile",
             "update_profile",
