@@ -1,12 +1,11 @@
 import multer from "multer";
 import { multerSaveFilesOrg } from "multer-savefilesorg";
 
-export const localUpload = multer({ dest: "upload/" });
 
-export const todoIconUpload = multer({
+export const educationalmediaUpload = multer({
     storage: multerSaveFilesOrg({
         apiAccessToken: process.env.SAVEFILESORG_API_KEY,
-        relativePath: "/mentalheath-api/todos/*"
+        relativePath: "/mentalheath-api/educationals/*"
     }),
     preservePath: true
 });

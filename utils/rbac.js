@@ -13,11 +13,11 @@ export const permissions = [
         actions: [
             "get_profile",
             "update_profile",
-            "add_advert",
-            "update_advert",
-            "get_advert_by_id",
-            "get_adverts",
-            "delete_advert"
+            "add_educational",
+            "update_educational",
+            "get_educational_by_id",
+            "get_educationals",
+            "delete_educational"
         ]
     }
 ]

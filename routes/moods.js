@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { hasPermission, isAuthenticated } from "../middlewares/auth.js";
+import { getMoodByDate, getMoods, logMood } from "../controllers/mood.js";
 
 // create a router
 const moodRouter = Router();

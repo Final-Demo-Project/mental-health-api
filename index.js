@@ -2,6 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import userRouter from "./routes/users.js";
+import moodRouter from "./routes/moods.js";
+import educationalRouter from "./routes/educational.js";
 
 
 
@@ -24,8 +26,7 @@ app.use(cors());
 
 
 // Use routes
-app.use(userRouter)
-
+app.use(userRouter, moodRouter, educationalRouter)
 
 
 // Listen for incoming requests

@@ -7,7 +7,7 @@ const userSchema = new Schema({
     password: { type: String, required: true },
     phone: { type: String, required: true },
     avatar: {type: String},
-    role: { type: String, default: "user", enum: ["user", "counselor"] }
+    role: { type: String, default: "user", enum: ["user", "counselor", "admin"] }
     // moodlogs: [{ type: Schema.Types.ObjectId, ref: "Mood" }],
     // assessments: [{ type: Schema.Types.ObjectId, ref: "Assessment" }],
     
