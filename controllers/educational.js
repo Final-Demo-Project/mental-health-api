@@ -3,12 +3,11 @@ import { addEducationaltValidator, updateEducationalValidator } from "../validat
 
 export const addEducational = async (req, res, next) => {
 
-
   try {
     // Validate input
     const { error, value } = addEducationaltValidator.validate({
       ...req.body,
-      media: req.file?.filename
+      cover: req.file?.filename
     });
     if (error) {
       return res.status(422).json(error);
@@ -75,7 +74,7 @@ export const updateEducational = async (req, res, next) => {
   try {
       const { error, value } = updateEducationalValidator.validate({
           ...req.body,
-          media: req.file?.filename
+          cover: req.file?.filename
       });
       if (error) {
           return res.status(422).json(error);

@@ -13,4 +13,4 @@ const assessmentSchema = new Schema({
 
 assessmentSchema.plugin(toJSON);
 
-export const MoodModel = model("Assessment", assessmentSchema);
+export const AssesmentModel = model("Assessment", assessmentSchema);

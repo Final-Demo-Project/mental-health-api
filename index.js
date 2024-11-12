@@ -4,6 +4,7 @@ import cors from "cors";
 import userRouter from "./routes/users.js";
 import moodRouter from "./routes/moods.js";
 import educationalRouter from "./routes/educational.js";
+import assessmentRouter from "./routes/assessment.js";
 
 
 

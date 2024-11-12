@@ -2,7 +2,7 @@ import multer from "multer";
 import { multerSaveFilesOrg } from "multer-savefilesorg";
 
 
-export const educationalmediaUpload = multer({
+export const educationalCoverUpload = multer({
     storage: multerSaveFilesOrg({
         apiAccessToken: process.env.SAVEFILESORG_API_KEY,
         relativePath: "/mentalheath-api/educationals/*"

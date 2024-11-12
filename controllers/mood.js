@@ -1,4 +1,4 @@
-import { MoodModel } from "../models/assessment.js";
+import { MoodModel } from "../models/mood.js";
 import { logMoodValidator } from "../validators/mood.js";
 
 
@@ -43,9 +43,9 @@ export const logMood = async (req, res, next) => {
 
   export const getMoodByDate = async (req, res, next) => {
     try {
-      const {id} = req.params;
+      const date = req.params;
       // get todo by id from dtabase
-      const mood = await MoodModel.findById(id);
+      const mood = await MoodModel.findByDate(date);
       // respond to request
       res.json(mood);
     } catch (error) {

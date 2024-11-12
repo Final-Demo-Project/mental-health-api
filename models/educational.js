@@ -11,13 +11,12 @@ const educationalSchema = new Schema({
     },
 
     author : {
-        type: Types.ObjectId,
-        ref: "Author",
+        type: String,
         required: true
     },
 
     date : {
-        type: Date, default: Date.now,
+        type: String,
         required: true
     },
 
