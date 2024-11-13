@@ -32,4 +32,4 @@ const educationalSchema = new Schema({
 
 })
 
-export const EducationalModel = model("Book", educationalSchema);
+export const EducationalModel = model("Educational", educationalSchema);

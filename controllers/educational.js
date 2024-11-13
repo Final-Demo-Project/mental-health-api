@@ -15,7 +15,7 @@ export const addEducational = async (req, res, next) => {
     // Write to database
     await EducationalModel.create({
       ...value,
-      user: req.auth.id
+      // user: req.auth.id
     });
     // Response to request
     res.status(201).json("Educational was added");
