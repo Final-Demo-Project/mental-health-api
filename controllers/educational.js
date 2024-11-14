@@ -61,9 +61,9 @@ export const getEducationalById = async (req, res, next) => {
 
   try {
     // Fetch a book for database
-    const book = await EducationalModel.findById(req.params.id).populate("author");
+    const book = await EducationalModel.findById(req.params.id).populate("educational");
     // Return Response
-    res.status(200).json(book);
+    res.status(200).json(educational);
   } catch (error) {
     next(error);
 
