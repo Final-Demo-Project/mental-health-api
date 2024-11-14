@@ -27,7 +27,10 @@ app.use(cors());
 
 
 // Use routes
-app.use(userRouter, moodRouter, educationalRouter)
+app.use(userRouter);
+app.use(moodRouter);
+app.use(educationalRouter);
+app.use(assessmentRouter);
 
 
 // Listen for incoming requests

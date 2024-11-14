@@ -12,10 +12,11 @@ export const takeAssessment = async (req, res, next) => {
      if (error) {
          return res.status(422).json(error);
      }
-     // write mood to database
-     await AssesmentModel.create(value);
-     //  const mood = new MoodModel({ user: req.user.id, mood: req.body.mood });
- 
+     // write assesstment to database
+     await AssesmentModel.create({
+      ...value,
+      // client: req.auth.id
+    });
      // Response to resquest 
       res.status(201).json("Assessment taken")
     } catch (error) {
@@ -27,7 +28,7 @@ export const takeAssessment = async (req, res, next) => {
   export const getAllAssessments = async (req, res, next) => {
      try {
        const { filter = "{}", sort = "{}", limit = 10, skip = 0 } = req.query;
-       // Fetch moods from database
+       // Fetch assesstments from database
        const assessments = await AssesmentModel
          .find(JSON.parse(filter))
          .sort(JSON.parse(sort))
