@@ -79,11 +79,11 @@ export const updateEducational = async (req, res, next) => {
       if (error) {
           return res.status(422).json(error);
       }
-      console.log(req.params, req.auth);
+      console.log(req.params.id, req.auth);
       const educational = await EducationalModel.findOneAndUpdate(
           {
               _id: req.params.id,
-              user: req.auth.id
+              // user: req.auth.id
           },
           value, { new: true });
       if (!educational) {
@@ -100,7 +100,7 @@ export const deleteEducational = async (req, res, next) => {
       const educational = await EducationalModel.findOneAndDelete(
           {
               _id: req.params.id,
-              user: req.auth.id
+              // user: req.auth.id
           }
       );
       if (!educational) {

@@ -41,15 +41,27 @@ export const logMood = async (req, res, next) => {
     }
   };
 
-  export const getMoodByDate = async (req, res, next) => {
+
+  export const getMoodByDate = async (req, res) => {
+    const date = req.params.date;
     try {
-      const date = req.params;
-      // get todo by id from dtabase
-      const mood = await MoodModel.findByDate(date);
-      // respond to request
-      res.json(mood);
+        const mood = await MoodModel.findOne({ date: date });
+        if (!mood) return res.status(404).json({ message: 'Mood not found for this date' });
+        res.json(mood);
     } catch (error) {
-     next(error); 
+        next(error);
     }
+};
+
+  // export const getMoodByDate = async (req, res, next) => {
+  //   try {
+  //     const date = req.params;
+  //     // get todo by id from dtabase
+  //     const mood = await MoodModel.findByDate(date);
+  //     // respond to request
+  //     res.json(mood);
+  //   } catch (error) {
+  //    next(error); 
+  //   }
    
-   }
+  //  }

@@ -10,6 +10,10 @@ export const moodSchema = new Schema({
     timestamps: true
 });
 
+// Add the custom static method to find mood by date
+moodSchema.statics.findByDate = function(date) {
+    return this.findOne({ date: date });
+}
 moodSchema.plugin(toJSON)
 
 
