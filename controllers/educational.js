@@ -79,7 +79,7 @@ export const updateEducational = async (req, res, next) => {
       if (error) {
           return res.status(422).json(error);
       }
-      console.log(req.params.id, req.auth);
+      console.log(req.params, req.auth);
       const educational = await EducationalModel.findOneAndUpdate(
           {
               _id: req.params.id,
