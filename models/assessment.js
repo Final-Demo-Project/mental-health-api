@@ -5,7 +5,7 @@ const assessmentSchema = new Schema({
     user: { type: Types.ObjectId, ref: 'User' },
    type: String, // e.g., "PHQ-9"
    score: Number, // Total score of the quiz
-   responses: [Number], // Array of answers to individual quiz questions
+   responses: {type: Object}, // Array of answers to individual quiz questions
    date: { type: Date, default: Date.now }
 }, {
     timestamps: true
