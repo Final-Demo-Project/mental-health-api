@@ -16,7 +16,7 @@ const assessmentSchema = new Schema({
         movement: { type: Number, required: true },
         suicidalThoughts: { type: Number, required: true },
     }, // Array of answers to individual quiz questions
-    severity: {type: String, enum: ['None', 'Mild', 'Moderate', 'Moderately Severe Depression', 'Severe Depression'],
+    severity: {type: String, enum: ["none", "mild", "moderate", "moderately severe depression", "severe depression"],
         required: true,}, // Calculated severity level
     date: { type: Date, default: Date.now }
 }, {
