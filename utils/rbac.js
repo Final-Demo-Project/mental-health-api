@@ -4,8 +4,8 @@ export const permissions = [
         actions: [
             "get_profile",
             "update_profile",
-            "get_advert_by_id",
-            "get_adverts"
+            "get_educational_by_id",
+            "get_educationals"
         ]
     },
     {
@@ -14,10 +14,25 @@ export const permissions = [
             "get_profile",
             "update_profile",
             "add_educational",
-            "update_educational",
+            "update_educational_by_id",
             "get_educational_by_id",
             "get_educationals",
             "delete_educational"
+        ]
+    },
+
+    {
+        role: "adminstrator",
+        actions: [
+            "get_profile",
+            "update_profile",
+            "add_educational",
+            "update_educational_by_id",
+            "get_educational_by_id",
+            "get_educationals",
+            "delete_educational",
+            "get_moods",
+            "get_assessments"
         ]
     }
 ]

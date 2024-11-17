@@ -23,7 +23,8 @@ export const registerUser = async (req, res, next) => {
       // Save user into database
       await UserModel.create({
         ...value,
-        password: hashedPassword
+        password: hashedPassword,
+        role: value.role || "user", //Default role is "user" 
       });
       // Send comfirmation email
       await mailTransport.sendMail({
@@ -58,10 +59,10 @@ export const registerUser = async (req, res, next) => {
       }
       // sigm a token for user
       const token = jwt.sign(
-        { id: user.id }, process.env.JWT_PRIVATE_KEY, { expiresIn: "24h" }
+        { id: user.id, role: user.role }, process.env.JWT_PRIVATE_KEY, { expiresIn: "24h" }
       );
       // respond to resquest
-      res.json({ message: "User logged in!", accessToken: token })
+      res.json({ message: "User logged in!", accessToken: token, role: user })
   
     } catch (error) {
       next(error);
