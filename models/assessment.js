@@ -3,7 +3,7 @@ import { toJSON } from "@reis/mongoose-to-json";
 
 const assessmentSchema = new Schema({
     user: { type: Types.ObjectId, ref: 'User' },
-    type: { type: String, required: true }, // e.g., "PHQ-9"
+    type: { type: String, required: false }, // e.g., "PHQ-9"
     score: { type: Number, required: true }, // Total score of the quiz
     responses: {
         anhedonia: { type: Number, required: true },
